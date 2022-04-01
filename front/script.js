@@ -15,10 +15,13 @@ const printChairs = (chairs) => {
   chairs.map((chair) => {
     const chairDiv = document.createElement("div");
     const deleteBtn = document.createElement("button");
+    const updateButton = document.createElement("button");
     deleteBtn.innerHTML = "delete";
+    updateButton.innerHTML = "update";
     chairDiv.innerHTML = `<div id=${chair.id} ><h3>${chair.attributes.title}</h3><p>${chair.attributes.description}</p></div>`;
     chairDisplay.appendChild(chairDiv);
     chairDisplay.appendChild(deleteBtn);
+    chairDisplay.appendChild(updateButton);
     deleteBtn.addEventListener("click", async () => {
       await fetch("http://localhost:1337/api/chairs/" + chair.id, {
         method: "delete",
