@@ -139,6 +139,7 @@ addChair.addEventListener("click", async (e) => {
     body: JSON.stringify(obj),
   });
   chairDisplay.innerHTML = "";
+  title.value = desc.value = price.value = quantity.value = '';
   fetchChair();
 });
 </script>
